@@ -1,4 +1,5 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit'
+import type { TodoList, TodoListChanges } from './types'
 
 export const initialState: TodoList[] = [
   {
@@ -70,16 +71,3 @@ export const todolistsSlice = createSlice({
 export const { deleteTodolistAC, createTodolistAC, updateTodolistAC } = todolistsSlice.actions
 export const { selectLists } = todolistsSlice.selectors
 export const todolistsReducer = todolistsSlice.reducer
-
-export type TodoList = {
-  id: string
-  title: string
-  description: string
-  color: string
-  addedDate: string
-  filter: Filter
-}
-
-type TodoListChanges = Partial<Omit<TodoList, 'id' | 'addedDate'>>
-
-export type Filter = 'all' | 'active' | 'completed'
