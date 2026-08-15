@@ -3,6 +3,8 @@ export const Paths = {
   todoLists: '/todo-lists',
 
   todoList(id: string) {
-    return `/todo-lists/${id}`
+    const url = `/todo-lists/${id}`
+    console.log(url)
+    return url
   },
 } as const
