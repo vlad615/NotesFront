@@ -1,4 +1,3 @@
-import '@/index.css'
 import { App } from '../App.tsx'
 import { createBrowserRouter } from 'react-router-dom'
 import { TodolistPage, TodolistsPage } from '@/pages/todolists'

@@ -1,5 +1,5 @@
 import { TodoListCard, selectLists } from '@/entities/todolists'
-import { useAppSelector } from '@/shared/hooks/useAppSelector'
+import { useAppSelector } from '@/shared/lib/useAppSelector'
 
 export const TodosLists = () => {
   const todosLists = useAppSelector(selectLists)
