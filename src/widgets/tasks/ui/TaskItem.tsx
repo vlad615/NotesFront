@@ -1,6 +1,7 @@
 import type { DomainTask } from '@/entities/tasks/'
 import { UpdatePriority, UpdateStatus } from '@/features/tasks/'
 import { Delete } from '@/features/tasks/ui/Delete'
+import { UpdateTask } from '@/features/tasks/ui/UpdateTask'
 
 type Props = {
   task: DomainTask
@@ -23,7 +24,17 @@ export const TaskItem = ({ task }: Props) => {
       <label>
         Начало: <time dateTime={task.startDate}>{task.deadline.replaceAll('-', '.').replace('T', ' ')}</time>
       </label>
-
+      <UpdateTask
+        todolistId={task.todoListId}
+        taskId={task.id}
+        task={{
+          title: task.title,
+          description: task.description,
+          startDate: task.startDate,
+          deadline: task.deadline,
+          spendtime: task.spendtime,
+        }}
+      />
       <Delete todolistId={task.todoListId} taskId={task.id} />
     </div>
   )
