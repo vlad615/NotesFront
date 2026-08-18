@@ -173,8 +173,6 @@ const initialState: TasksType = {
   ],
 }
 
-const emptyTask: DomainTask[] = []
-
 export const tasksSlice = createSlice({
   name: 'tasks',
   initialState: {
@@ -234,5 +232,5 @@ export const tasksSlice = createSlice({
 })
 
 export const { selectTasks } = tasksSlice.selectors
-export const { createTaskAC, deleteTaskAC, deleteAllTasksAC } = tasksSlice.actions
+export const { createTaskAC, deleteTaskAC, deleteAllTasksAC, updateTaskAC } = tasksSlice.actions
 export const tasksReducer = tasksSlice.reducer

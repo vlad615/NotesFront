@@ -11,7 +11,7 @@ export const TasksList = ({ todolistId }: Props) => {
   const tasks = useAppSelector(selectTasks)[todolistId] || emptyTask
 
   return (
-    <div>
+    <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
       {tasks.map((task) => (
         <TaskItem key={task.id} task={task} />
       ))}
