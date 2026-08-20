@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { createTodolistAC, deleteTodolistAC } from '@/entities/todolists'
 import type { CreateTaskModel, DomainTask, TasksType, UpdateTaskModel } from './types'
 
 const initialState: TasksType = {
@@ -182,6 +181,9 @@ export const tasksSlice = createSlice({
     selectTasks: (state) => state.tasksState,
   },
   reducers: (create) => ({
+    createTasksListAC: create.reducer<{ todolistId: string }>((state, action) => {
+      state.tasksState[action.payload.todolistId] = []
+    }),
     createTaskAC: create.preparedReducer(
       (payload: { todolistId: string; task: CreateTaskModel }) => {
         const newTask: DomainTask = {
@@ -193,7 +195,7 @@ export const tasksSlice = createSlice({
           startDate: payload.task.startDate || new Date().toISOString(),
           deadline: payload.task.deadline || '',
           description: payload.task.description || '',
-          spendtime: '00:00:00',
+          spendtime: '00:00',
           todoListId: payload.todolistId,
           order: 0,
           updating: false,
@@ -219,18 +221,13 @@ export const tasksSlice = createSlice({
     deleteAllTasksAC: create.reducer<{ id: string }>((state, action) => {
       state.tasksState[action.payload.id] = []
     }),
+    deleteTaskListAC: create.reducer<{ id: string }>((state, action) => {
+      delete state.tasksState[action.payload.id]
+    }),
   }),
-  extraReducers: (builder) => {
-    builder
-      .addCase(createTodolistAC, (state, action) => {
-        state.tasksState[action.payload.id] = []
-      })
-      .addCase(deleteTodolistAC, (state, action) => {
-        delete state.tasksState[action.payload.id]
-      })
-  },
 })
 
 export const { selectTasks } = tasksSlice.selectors
-export const { createTaskAC, deleteTaskAC, deleteAllTasksAC, updateTaskAC } = tasksSlice.actions
+export const { createTasksListAC, createTaskAC, deleteTaskAC, deleteAllTasksAC, deleteTaskListAC, updateTaskAC } =
+  tasksSlice.actions
 export const tasksReducer = tasksSlice.reducer
