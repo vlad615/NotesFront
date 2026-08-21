@@ -4,10 +4,12 @@ import { MobileMenu } from './ui/MobileMenu'
 
 export const MainLayout = () => {
   return (
-    <div className="container md:flex">
-      <DesktopMenu />
-      <MobileMenu />
-      <Outlet />
+    <div className="container">
+      <div className="md:flex">
+        <DesktopMenu />
+        <MobileMenu />
+        <Outlet />
+      </div>
     </div>
   )
 }

@@ -10,7 +10,7 @@ export const ThemeProvider = ({ children }: Props) => {
   const theme = useAppSelector(selectTheme)
 
   useEffect(() => {
-    document.documentElement.classList.toggle('light', theme === 'dark')
+    document.documentElement.classList.toggle('dark', theme === 'dark')
   }, [theme])
 
   return children

@@ -5,6 +5,7 @@
   --spacing: 10px;
 
   --color-background: var(--background);
+  --color-background-menu: var(--background-menu);
   --color-surface: var(--surface);
   --color-border: var(--border);
 
@@ -18,7 +19,8 @@
 }
 
 :root {
-  --background: #f7f7fa;
+  --background: #fafafa;
+  --background-menu: #f7f7fa;
   --surface: #ffffff;
   --border: #e5e7eb;
 
@@ -27,14 +29,15 @@
   --text-secondary: #6b7280;
 
   --primary: #7430e9;
-  --primary-hover: #6d28d9;
+  --primary-hover: #6c28d95b;
   --primary-light: #7c3aed25;
 }
 
 .dark {
   --background: #0f172a;
-  --surface: #1e293b;
-  --border: #334155;
+  --background-menu: #1d273f;
+  --surface: #222f46;
+  --border: rgb(23, 30, 39);
 
   --text: #f8fafc;
   --text-primary: #8b5cf6;
