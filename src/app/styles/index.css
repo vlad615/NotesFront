@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: 'Inter', sans-serif;
+  --spacing: 10px;
 
   --color-background: var(--background);
   --color-surface: var(--surface);
@@ -46,6 +47,12 @@
 
 @layer base {
   body {
-    @apply bg-background text-text font-sans font-normal;
+    @apply bg-background text-text font-sans font-normal min-w-xs;
   }
+}
+
+@utility container {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 20px;
 }
