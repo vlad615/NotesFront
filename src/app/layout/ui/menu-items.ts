@@ -19,7 +19,7 @@ export const defaultMenu: MenuItem[] = [
 
 export const mainMenu: MenuItem[] = [
   {
-    title: 'To Do Lists',
+    title: 'Lists',
     path: '/todo-lists',
     iconId: 'folder',
   },

@@ -12,8 +12,8 @@ export const DesktopMenu = () => {
       </div>
 
       <nav className="flex flex-1 justify-between flex-col divide-border">
-        <Menu items={mainMenu} />
-        <Menu items={defaultMenu} />
+        <Menu items={mainMenu} dirItems="column" />
+        <Menu items={defaultMenu} dirItems="column" />
       </nav>
       <LightButton />
     </aside>

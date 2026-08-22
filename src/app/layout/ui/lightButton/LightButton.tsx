@@ -17,7 +17,7 @@ export const LightButton = () => {
       type="button"
       onClick={handleToggleTheme}
       aria-label="Toggle theme"
-      className="flex items-center gap-2.5 px-2 py-1.5 mt-1.5 text-base md:text-2xl font-medium cursor-pointer rounded-full border border-border bg-surface">
+      className="flex items-center gap-2.5 px-2 py-1.5 mt-1.5 text-xl md:text-2xl font-medium cursor-pointer rounded-full border border-border bg-surface">
       <Icon iconId={isDark ? 'dark' : 'light'} width="35" height="35" fill="fill-current" />
       {isDark ? 'Dark' : 'Light'}
     </button>
