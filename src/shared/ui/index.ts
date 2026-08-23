@@ -1,3 +1,5 @@
 export { Icon } from './icons/Icon'
 export { Button } from './button/Button'
 export { TitleHeader } from './title-header/TitileHeader'
+export { Input } from './input/Input'
+export { TextArea } from './textarea/TextArea'

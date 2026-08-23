@@ -10,12 +10,14 @@ export const MobileMenu = () => {
   return (
     <>
       {isOpen && (
-        <div className="fixed bottom-11 right-0 bg-background-menu p-2 rounded-2xl">
-          <div className="">
-            <nav className="flex flex-col gap-2">
-              {<Menu items={defaultMenu} dirItems="column" />}
-              <LightButton />
-            </nav>
+        <div className="fixed inset-0" onClick={() => setIsOpen(false)}>
+          <div className="fixed bottom-11 right-0 bg-background-menu p-2 rounded-2xl md:hidden">
+            <div className="">
+              <nav className="flex flex-col gap-2">
+                {<Menu items={defaultMenu} dirItems="column" />}
+                <LightButton />
+              </nav>
+            </div>
           </div>
         </div>
       )}

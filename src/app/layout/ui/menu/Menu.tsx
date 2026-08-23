@@ -23,7 +23,7 @@ export const Menu = ({ items, dirItems = 'row', dirLink = 'row', children }: Pro
               } ${
                 isActive
                   ? 'text-primary md:bg-primary-hover'
-                  : 'text-current md:hover:bg-primary-hover hover:text-white'
+                  : 'text-current md:hover:bg-primary-hover hover:text-text-secondary '
               }`
             }>
             <Icon iconId={i.iconId} width="35" height="35" fill="fill-current" />
