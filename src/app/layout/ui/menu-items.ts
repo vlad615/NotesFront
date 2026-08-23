@@ -39,3 +39,6 @@ export const mainMenu: MenuItem[] = [
     iconId: 'statistics',
   },
 ]
+
+export const mobMenu: MenuItem[] = mainMenu.slice(0, 3)
+export const mobDefault: MenuItem[] = [mainMenu[3]].concat(defaultMenu)

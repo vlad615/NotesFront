@@ -62,7 +62,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-text font-sans font-normal min-w-xs;
+    @apply bg-background text-text font-sans font-normal min-w-sm;
   }
 }
 
