@@ -5,7 +5,7 @@ export const TodosLists = () => {
   const todosLists = useAppSelector(selectLists)
 
   return (
-    <div>
+    <div className="flex gap-1.5 flex-wrap">
       {todosLists.map((todolist) => (
         <TodoListCard key={todolist.id} list={todolist} />
       ))}
