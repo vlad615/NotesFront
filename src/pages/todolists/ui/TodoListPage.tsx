@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom'
 import { useAppSelector } from '@/shared/lib'
-import { selectLists, TodoListCard } from '@/entities/todolists'
+import { selectLists } from '@/entities/todolists'
 import { TasksList } from '@/widgets/tasks'
+import { CradHeader } from '@/entities/todolists/ui/card-header/CardHeader'
+import { EditDelete } from '@/features/todolists'
 
 export const TodolistPage = () => {
   const { todosId } = useParams()
@@ -11,9 +13,11 @@ export const TodolistPage = () => {
     return <p>TodoList not found</p>
   }
   return (
-    <>
-      <TodoListCard list={todolist} />
+    <div className="w-full md:py-1.5">
+      <CradHeader large title={todolist.title} color={todolist.color} addedDate={todolist.addedDate}>
+        <EditDelete large />
+      </CradHeader>
       <TasksList todolistId={todolist.id} />
-    </>
+    </div>
   )
 }

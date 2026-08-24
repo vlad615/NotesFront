@@ -9,7 +9,7 @@ type Props = {
 
 export const TodoListCard = ({ list }: Props) => {
   return (
-    <article className="min-w-xs md:max-w-sm flex-1 bg-surface rounded-md shadow-md hover:shadow-lg hover:scale-102 transition-all duration-300">
+    <article className="min-w-2xs lg:max-w-md flex-1 bg-surface rounded-md shadow-md hover:shadow-lg hover:scale-102 transition-all duration-300">
       <div className="p-1.5">
         <CradHeader title={list.title} color={list.color} addedDate={list.addedDate} />
         <p className="mt-2 text-lg">{list.description}</p>
