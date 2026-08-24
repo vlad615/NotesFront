@@ -34,9 +34,9 @@ export const AddTodo = () => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/35" onClick={setModal}>
+        <div className="fixed inset-0 z-50 px-1.5 flex items-center justify-center bg-black/35" onClick={setModal}>
           <div
-            className="w-full max-w-xl mx-1.5 rounded-2xl bg-surface p-2 animate-in fade-in zoom-in-95 duration-300"
+            className="w-full max-w-xl rounded-2xl bg-surface p-2 animate-in fade-in zoom-in-95 duration-300"
             onClick={(e) => e.stopPropagation()}>
             <TitleHeader title="Create New To Do List" description="Add a new todo list to organize your tasks">
               <button onClick={setModal} className="cursor-pointer text-text-secondary hover:text-text self-start">
