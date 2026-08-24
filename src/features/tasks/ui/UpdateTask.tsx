@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { updateTaskAC, type UpdateTaskModel } from '@/entities/tasks/'
 import { useAppDispatch } from '@/shared/lib'
+import { Icon } from '@/shared/ui'
 
 type Props = {
   taskId: string
@@ -49,11 +50,9 @@ export const UpdateTask = ({ taskId, todolistId, task }: Props) => {
 
   return (
     <>
-      <div
-        className="cursor-pointer text-blue-600 underline px-2.5 py-1.5 rounded transition-colors hover:bg-blue-50"
-        onClick={handleOpen}>
-        Изменить задачу
-      </div>
+      <button className="cursor-pointer p-1 rounded-full hover:bg-border text-text-secondary" onClick={handleOpen}>
+        <Icon iconId="edit" width="25" height="25" fill="fill-current" />
+      </button>
 
       {isOpen && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={handleCancel}>

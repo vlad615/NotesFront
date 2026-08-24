@@ -18,10 +18,18 @@ export const UpdateStatus = ({ todolistId, taskId, current }: Props) => {
   return (
     <select
       defaultValue={StatusOptions[current].value}
-      className={StatusOptions[current].color}
+      className={
+        StatusOptions[current].color +
+        ' appearance-none cursor-pointer font-semibold text-base text-center relative p-0.5 rounded-lg'
+      }
+      style={{ backgroundColor: StatusOptions[current].backgroundColor }}
       onChange={handleChange}>
       {Object.values(StatusOptions).map((status) => (
-        <option key={status.value} value={status.value} className={status.color}>
+        <option
+          key={status.value}
+          value={status.value}
+          className={status.color}
+          style={{ backgroundColor: StatusOptions[status.value].backgroundColor }}>
           {status.label}
         </option>
       ))}

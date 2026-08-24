@@ -18,10 +18,19 @@ export const UpdatePriority = ({ todolistId, taskId, current }: Props) => {
   return (
     <select
       defaultValue={PriorityOptions[current].value}
-      className={PriorityOptions[current].color}
+      className={
+        PriorityOptions[current].color +
+        ' appearance-none cursor-pointer font-semibold text-base text-center relative p-0.5 rounded-lg'
+      }
+      id={`priority-${taskId}`}
+      style={{ backgroundColor: PriorityOptions[current].backgroundColor }}
       onChange={handleChange}>
       {Object.values(PriorityOptions).map((status) => (
-        <option key={status.value} value={status.value} className={status.color}>
+        <option
+          key={status.value}
+          value={status.value}
+          className={status.color}
+          style={{ backgroundColor: PriorityOptions[status.value].backgroundColor }}>
           {status.label}
         </option>
       ))}
