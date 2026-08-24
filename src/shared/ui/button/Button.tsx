@@ -1,19 +1,40 @@
-import type { ButtonHTMLAttributes } from 'react'
+import type { ButtonHTMLAttributes, CSSProperties } from 'react'
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
-  bg: string
-  border: string
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  color?: string
   filled?: boolean
+  primary?: boolean
 }
 
-export const Button = ({ bg, onClick, children, border, filled, type }: Props) => {
+export function Button({
+  color,
+  filled = false,
+  primary = false,
+  className = '',
+  style,
+  type = 'button',
+  children,
+  ...rest
+}: ButtonProps) {
+  const resolvedColor = primary ? 'var(--color-primary)' : (color ?? 'var(--color-primary)')
+  const buttonStyle = { ...style, '--btn-color': resolvedColor } as CSSProperties
+
+  const variantClasses = filled
+    ? 'bg-(--btn-color) text-white hover:bg-transparent hover:text-(--btn-color)'
+    : 'bg-transparent text-(--btn-color) hover:bg-(--btn-color) hover:text-white'
+
   return (
     <button
       type={type}
-      onClick={onClick}
-      className={`flex gap-1 items-center px-1.5 py-1 text-white font-medium text-base cursor-pointer border rounded-md ${
-        filled ? bg : 'bg-transparent'
-      } ${border} hover:${filled ? 'bg-transparent' : bg} hover:${filled ? 'text-primary' : 'text-white'}`}>
+      style={buttonStyle}
+      className={[
+        'flex items-center justify-center gap-2 rounded-lg cursor-pointer border-2 border-(--btn-color)',
+        'px-1.5 py-1 text-base hover:scale-110 font-medium transition-all duration-300',
+        'disabled:pointer-events-none disabled:opacity-50',
+        variantClasses,
+        className,
+      ].join(' ')}
+      {...rest}>
       {children}
     </button>
   )

@@ -64,10 +64,10 @@ export const AddTodo = () => {
               <Colors current={values.color} onClick={(color) => setValues((prev) => ({ ...prev, color }))} />
 
               <div className="flex justify-end gap-3 items-center">
-                <Button onClick={setModal} bg="bg-primary" border="border-border" type="button">
+                <Button onClick={setModal} primary type="button">
                   Cancel
                 </Button>
-                <Button filled bg="bg-primary" border="border-border" type="submit">
+                <Button filled primary type="submit">
                   Create List
                 </Button>
               </div>
@@ -76,7 +76,7 @@ export const AddTodo = () => {
         </div>
       )}
 
-      <Button onClick={setModal} filled bg="bg-primary" border="border-primary">
+      <Button onClick={setModal} filled primary>
         <Icon iconId="plus" width="20" height="20" fill="fill-current" />
         New Todo
       </Button>

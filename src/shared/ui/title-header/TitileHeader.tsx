@@ -8,7 +8,7 @@ type Props = {
 
 export const TitleHeader = ({ title, description, children }: Props) => {
   return (
-    <div className="flex justify-between items-center mb-2.5">
+    <div className="flex justify-between flex-wrap gap-2 items-center mb-2.5 ">
       <div>
         <h1 className="font-medium text-3xl mb-0.5">{title}</h1>
         <p className="text-base text-text-secondary">{description}</p>
