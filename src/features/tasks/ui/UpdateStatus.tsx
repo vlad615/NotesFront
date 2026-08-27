@@ -1,4 +1,4 @@
-import { StatusOptions, TaskStatus } from '@/shared/types/enums'
+import { StatusOptions, TaskStatus } from '@/entities/tasks/model/enums'
 import { useAppDispatch } from '@/shared/lib'
 import { updateTaskAC } from '@/entities/tasks'
 

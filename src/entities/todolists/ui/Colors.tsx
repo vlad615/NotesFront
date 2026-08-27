@@ -10,9 +10,10 @@ export const Colors = ({ current, onClick }: Props) => {
   return (
     <label className="block text-lg font-semibold text-text-secondary">
       Color:
-      <ul className="flex items-center gap-3 mt-2 overflow-auto">
+      <ul className="flex items-center gap-3 px-1 py-2 overflow-auto">
         {colors.map((color) => {
           const isSelected = current == color
+
           return (
             <li
               key={color}

@@ -40,13 +40,19 @@ export const todolistsSlice = createSlice({
     deleteTodolistAC: create.reducer<{ id: string }>((state, action) => {
       const index = state.todoLists.findIndex((todolist) => todolist.id === action.payload.id)
       if (index !== -1) {
+        console.log('delete')
+
         state.todoLists.splice(index, 1)
       }
     }),
     updateTodolistAC: create.reducer<{ id: string; todolist: TodoListChanges }>((state, action) => {
-      const todolist = state.todoLists.find((todolist) => todolist.id === action.payload.id)
-      if (todolist) {
-        Object.assign(todolist, action.payload.todolist)
+      const todo_updated = state.todoLists.find((todo) => todo.id === action.payload.id)
+      console.log(todo_updated)
+
+      if (todo_updated) {
+        Object.assign(todo_updated, action.payload.todolist)
+
+        console.log(todo_updated)
       }
     }),
     createTodolistAC: create.preparedReducer(

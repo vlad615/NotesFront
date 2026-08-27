@@ -1,7 +1,7 @@
-import { Colors } from '@/entities/todolists/'
+import { Form } from '@/entities/todolists/'
 import { createTodo } from '@/features/tasks-todo-model'
 import { useAppDispatch } from '@/shared/lib'
-import { Button, Icon, Input, TextArea, TitleHeader } from '@/shared/ui'
+import { Button, Icon } from '@/shared/ui'
 import { useState } from 'react'
 
 const initialFormValues = {
@@ -20,6 +20,10 @@ export const AddTodo = () => {
     setValues((prev) => ({ ...prev, [name]: value }))
   }
 
+  const handleColor = (color: string) => {
+    setValues((prev) => ({ ...prev, color }))
+  }
+
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!values.title.trim()) return
@@ -34,46 +38,18 @@ export const AddTodo = () => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 z-50 px-1.5 flex items-center justify-center bg-black/35" onClick={setModal}>
-          <div
-            className="w-full max-w-xl rounded-2xl bg-surface p-2 animate-in fade-in zoom-in-95 duration-300"
-            onClick={(e) => e.stopPropagation()}>
-            <TitleHeader title="Create New To Do List" description="Add a new todo list to organize your tasks">
-              <button onClick={setModal} className="cursor-pointer text-text-secondary hover:text-text self-start">
-                <Icon iconId="close" width="30" height="30" fill="fill-current" />
-              </button>
-            </TitleHeader>
-
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <Input
-                lable="Title"
-                onChange={handleChange}
-                name="title"
-                required
-                value={values.title}
-                placeholder="Enter list title..."
-              />
-              <TextArea
-                lable="Description"
-                value={values.description}
-                name="description"
-                onChange={handleChange}
-                rows={3}
-                placeholder="Enter description (optional)..."
-              />
-              <Colors current={values.color} onClick={(color) => setValues((prev) => ({ ...prev, color }))} />
-
-              <div className="flex justify-end gap-3 items-center">
-                <Button onClick={setModal} primary type="button">
-                  Cancel
-                </Button>
-                <Button filled primary type="submit">
-                  Create List
-                </Button>
-              </div>
-            </form>
-          </div>
-        </div>
+        <Form
+          Ftitle="Create your new todo list"
+          Fdescription="Add a new todo list to organize your tasks"
+          action="Create Todo"
+          title={values.title}
+          description={values.description}
+          color={values.color}
+          onChange={handleChange}
+          close={setModal}
+          onSubmit={handleSubmit}
+          setColor={handleColor}
+        />
       )}
 
       <Button onClick={setModal} filled primary>

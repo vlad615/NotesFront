@@ -1,4 +1,4 @@
-import { PriorityOptions, TaskPriority } from '@/shared/types/enums'
+import { PriorityOptions, TaskPriority } from '@/entities/tasks/model/enums'
 import { useAppDispatch } from '@/shared/lib'
 import { updateTaskAC } from '@/entities/tasks'
 

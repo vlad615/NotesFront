@@ -1,4 +1,4 @@
-import { useAppSelector } from '@/shared/lib/useAppSelector'
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector'
 import { selectTasks } from '@/entities/tasks'
 
 export const TasksListPage = () => {

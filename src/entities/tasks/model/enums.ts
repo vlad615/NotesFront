@@ -72,3 +72,11 @@ export const PriorityOptions = {
     backgroundColor: 'rgb(168 85 247 / 20%)',
   },
 } as const
+
+export const tabs = [
+  { value: 'all' as const, label: 'All' },
+  { value: TaskStatus.Active, label: 'Active' },
+  { value: TaskStatus.InProgress, label: 'In Progress' },
+  { value: TaskStatus.Completed, label: 'Completed' },
+  { value: TaskStatus.Draft, label: 'Draft' },
+]

@@ -1,5 +1,6 @@
 import { Icon } from '@/shared/ui'
 import { type ReactNode } from 'react'
+import { DateTime } from '@/shared/ui/'
 
 type Props = {
   title: string
@@ -29,11 +30,9 @@ export const CradHeader = ({ title, color, addedDate, large, children }: Props) 
             />
           </div>
           <div>
-            <h2 className={large ? 'font-bold text-4xl' : 'font-semibold text-2xl'}>{title}</h2>
-            <time
-              dateTime={addedDate}
-              className={large ? 'text-text-secondary text-lg' : 'text-text-secondary text-xs'}>
-              Created: {addedDate}
+            <h2 className={`text-wrap ${large ? 'font-bold text-4xl' : 'font-semibold text-2xl'}`}>{title}</h2>
+            <time dateTime={addedDate} className={`text-text-secondary ${large ? 'text-lg' : 'text-xs'}`}>
+              Created: {DateTime(addedDate)}
             </time>
           </div>
         </div>

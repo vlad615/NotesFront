@@ -1,3 +1,4 @@
-export * from './useAppDispatch'
-export * from './useAppSelector'
-export { useClickOutside } from './useClickOutside'
+export { useMediaQuery } from './hooks/matchMedia'
+export * from './hooks/useAppDispatch'
+export * from './hooks/useAppSelector'
+export { useClickOutside } from './hooks/useClickOutside'

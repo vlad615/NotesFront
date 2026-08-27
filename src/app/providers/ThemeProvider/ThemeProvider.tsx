@@ -1,5 +1,5 @@
 import { useEffect, type ReactNode } from 'react'
-import { useAppSelector } from '@/shared/lib/useAppSelector'
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector'
 import { selectTheme } from '@/app/store/app-slice'
 
 type Props = {
