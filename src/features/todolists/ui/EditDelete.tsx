@@ -1,10 +1,8 @@
-import { useAppDispatch, useClickOutside } from '@/shared/lib/'
-import { useRef, useState } from 'react'
+import { useClickOutside } from '@/shared/lib/'
 import { Icon } from '@/shared/ui'
-import { deleteTodolistAC, Form } from '@/entities/todolists'
-import { useNavigate } from 'react-router-dom'
-import { EditTodo } from './EditTodo'
+import { useRef, useState } from 'react'
 import { Delete } from './Delete'
+import { EditTodo } from './EditTodo'
 
 type Props = {
   todolistId: string

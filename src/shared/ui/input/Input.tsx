@@ -7,7 +7,7 @@ type Props = InputHTMLAttributes<HTMLInputElement> & {
 
 export const Input = ({ lable, required, value, onChange, placeholder, name }: Props) => {
   return (
-    <label htmlFor={lable} className="block text-lg font-semibold text-text-secondary">
+    <label htmlFor={name} className="block text-lg font-semibold text-text-secondary">
       {lable}: {required && <span className="text-red-500">*</span>}
       <input
         id={name}
