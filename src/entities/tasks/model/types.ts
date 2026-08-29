@@ -17,6 +17,6 @@ export type DomainTask = {
 
 export type UpdateTaskModel = Partial<Omit<DomainTask, 'id' | 'todoListId' | 'order' | 'addedDate' | 'updating'>>
 
-export type CreateTaskModel = Omit<UpdateTaskModel, 'spendtime'> & { title: string }
+export type CreateTaskModel = Omit<UpdateTaskModel, 'spendtime'>
 
 export type TasksType = Record<string, DomainTask[]>

@@ -21,10 +21,10 @@ export const TasksList = ({ todolistId }: Props) => {
       <table className="w-full min-w-max border-collapse text-left">
         <thead>
           <tr className="border-b border-border text-lg font-semibold uppercase tracking-wide text-text-secondary">
-            <th scope="col" className="w-3.5 py-2.5">
+            {/* <th scope="col" className="w-3.5 py-2.5">
               <span className="sr-only">Select</span>
-            </th>
-            <th>Task</th>
+            </th> */}
+            <th className="pl-1.5">Task</th>
             <th className="pr-2">Status</th>
             <th className="pr-2">Priority</th>
             <th className="pr-2">Start Date</th>

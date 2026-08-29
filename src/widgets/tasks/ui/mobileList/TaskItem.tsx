@@ -13,12 +13,12 @@ export const TaskItem = ({ task }: Props) => {
   return (
     <details className="group border-b border-border last:border-b-0">
       <summary className="flex cursor-pointer list-none items-start gap-2 px-3 py-3 appearance-none">
-        <input
+        {/* <input
           type="checkbox"
           aria-label={`Select ${task.title}`}
           className="mt-1.5 size-2 shrink-0 cursor-pointer accent-primary"
           onClick={(event) => event.stopPropagation()}
-        />
+        /> */}
 
         <span className="min-w-0 flex-1">
           <span className="block truncate text-sm font-semibold text-text">{task.title}</span>

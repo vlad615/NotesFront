@@ -11,11 +11,11 @@ type Props = {
 export const TaskItem = ({ task }: Props) => {
   return (
     <tr className="border-b border-border text-sm last:border-b-0">
-      <td className="px-1 py-2">
+      {/* <td className="px-1 py-2">
         <input type="checkbox" aria-label={`Select ${task.title}`} className="cursor-pointer w-2 h-2 accent-primary" />
-      </td>
-      <td className="max-w-[320px] pr-1.5">
-        <h3 className="truncate text-lg font-medium text-primary">{task.title}</h3>
+      </td> */}
+      <td className="max-w-[320px] px-1.5">
+        <h3 className="truncate text-lg font-medium text-primary ">{task.title}</h3>
         <p className="truncate text-sm text-text-secondary">{task.description || 'No description'}</p>
       </td>
       <td className="pr-1.5">

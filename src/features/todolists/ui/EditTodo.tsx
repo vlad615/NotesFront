@@ -40,7 +40,7 @@ export const EditTodo = ({ todolistId, title, description, color, close }: Props
       close={close}
       onSubmit={handleSubmit}
       setColor={handleColor}
-      Ftitle={`Editing todo list '${title}`}
+      Ftitle={`Editing todo list "${title}"`}
       Fdescription="Add a new todo list to organize your tasks"
       action="Edit Todo"
     />

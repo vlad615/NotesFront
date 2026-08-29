@@ -56,7 +56,17 @@ export const UpdateTask = ({ taskId, todolistId, task }: Props) => {
         <Icon iconId="edit" width="25" height="25" fill="fill-current" />
       </button>
 
-      {isOpen && <Form task={formValues} onChange={handleChange} onSubmit={handleConfirm} close={handleCancel} />}
+      {isOpen && (
+        <Form
+          task={formValues}
+          onChange={handleChange}
+          onSubmit={handleConfirm}
+          close={handleCancel}
+          Ftitle="Editing task"
+          Fdescription={`Change task "${task.title}"`}
+          action="Update task"
+        />
+      )}
     </>
   )
 }

@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom'
 import { useAppSelector, useMediaQuery } from '@/shared/lib'
-import { selectLists } from '@/entities/todolists'
+import { Description, selectLists } from '@/entities/todolists'
 import { MobileTasksList, TasksList } from '@/widgets/tasks'
 import { CradHeader } from '@/entities/todolists/ui/CardHeader'
 import { EditDelete } from '@/features/todolists'
+import { CreateTask } from '@/features/tasks'
 
 export const TodolistPage = () => {
   const isDesktop = useMediaQuery('(min-width: 768px)')
@@ -25,6 +26,9 @@ export const TodolistPage = () => {
           description={todolist.description}
         />
       </CradHeader>
+      <Description description={todolist.description}>
+        <CreateTask todolistId={todolist.id} />
+      </Description>
       {isDesktop && <TasksList todolistId={todolist.id} />}
       {!isDesktop && <MobileTasksList todolistId={todolist.id} />}
     </div>
