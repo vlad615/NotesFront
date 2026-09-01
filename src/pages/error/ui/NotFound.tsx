@@ -1,0 +1,7 @@
+export const NotFound = () => {
+  return (
+    <div className="w-full h-full flex items-center justify-center">
+      <h1 className="font-medium text-3xl">Oops, it seems that page wasn't found!</h1>
+    </div>
+  )
+}

@@ -4,7 +4,7 @@ import { TodosLists } from '@/widgets/todolist/'
 
 export const TodolistsPage = () => {
   return (
-    <div className="w-full md:py-1.5">
+    <div className="container">
       <TitleHeader title="My to do lists" wrap description="Manage your to-do lists and create new">
         <AddTodo />
       </TitleHeader>

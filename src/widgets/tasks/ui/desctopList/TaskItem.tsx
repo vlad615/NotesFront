@@ -15,7 +15,7 @@ export const TaskItem = ({ task }: Props) => {
         <input type="checkbox" aria-label={`Select ${task.title}`} className="cursor-pointer w-2 h-2 accent-primary" />
       </td> */}
       <td className="max-w-[320px] px-1.5">
-        <h3 className="truncate text-lg font-medium text-primary ">{task.title}</h3>
+        <h3 className="truncate text-lg font-medium text-primary">{task.title}</h3>
         <p className="truncate text-sm text-text-secondary">{task.description || 'No description'}</p>
       </td>
       <td className="pr-1.5">

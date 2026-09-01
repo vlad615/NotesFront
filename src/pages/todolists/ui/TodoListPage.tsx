@@ -15,7 +15,7 @@ export const TodolistPage = () => {
     return <p>TodoList not found</p>
   }
   return (
-    <div className="w-full md:py-1.5 ">
+    <div className="container">
       <CradHeader large title={todolist.title} color={todolist.color} addedDate={todolist.addedDate}>
         <EditDelete
           todolistId={todosId ?? ''}

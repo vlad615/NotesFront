@@ -1,6 +1,6 @@
-import { useAppSelector } from '@/shared/lib/hooks/useAppSelector'
+import { TaskStatus } from '@/entities/tasks'
 import { Filter, selectTasks, type DomainTask } from '@/entities/tasks/'
-import { tabs, TaskStatus } from '@/entities/tasks'
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector'
 import { useState } from 'react'
 import { TaskItem } from './TaskItem'
 
